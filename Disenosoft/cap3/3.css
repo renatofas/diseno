@@ -1,0 +1,18 @@
+p{
+    color: rebeccapurple;
+    font-family: "Lucida Sans";
+    font-size: 13px;
+    font-weight: bolder;
+    font-style: italic ;
+    text-align: start;
+    text-decoration: overline underline line-through;
+    line-height: 2;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+h1{
+    text-align: center;
+    font-weight: 400;
+    font-family: "Amsterdam";
+    font-style: normal;
+}

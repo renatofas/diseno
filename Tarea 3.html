@@ -1,0 +1,98 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .heart-button {
+        position: relative;
+        width: 50px;
+        height: 45px;
+        background-color: transparent;
+        background-color: white;
+        border: 0px solid black;
+        cursor: pointer;
+        outline: none;
+      }
+      .heart-button::before,
+      .heart-button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 80px;
+        width: 50px;
+        height: 75px;
+        border-radius: 25px 25px 0 0;
+        background-color: inherit;
+        border: 1px solid black;
+      }
+      .heart-button::before {
+        left: 52px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+      .heart-button::after {
+        left: 0px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+      .lie {
+        position: relative;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        left: 80px;
+        top: auto;
+      }
+    </style>
+    <script type="text/jsx">
+        function Header({ title}) {
+            return <h1>{title ? title : 'Default title'}</h1>;
+          }           
+          function HomePage() {
+            const names = ['TICS2', 'TICS23', 'TICS3'];
+            const [likes, setLikes] = React.useState(0);
+            const [score, setScore] = React.useState(0);
+            function handleClick() {
+                console.log('increment like count');
+                if (likes > 0) {
+                  setLikes(likes - 1)
+                  }
+                else {
+                  setLikes(likes + 1)
+                }
+              }
+              function increment() {
+                setScore(s => s + 1);
+              }
+            
+            return (
+              <div>
+                <Header />
+                <Header title="React" />
+                <Header title="A new title" />
+                <ul>
+                    {names.map((name) => (
+                      <li>{name}</li>
+                    ))}
+                </ul>
+                <button onClick={handleClick}className="heart-button" 
+                style={{ backgroundColor: likes === 1 ? 'red' : 'white' }}>
+                  </button>
+                  <p className = "lie">{likes} Like </p>
+                  <button onClick={() => increment()}>+1</button>
+                  <button onClick={() => {
+                    increment();
+                    increment();
+                    increment();
+                  }}>+3</button>
+                  <h1>Score: {score}</h1>
+              </div>
+            );
+          }           
+          const root = ReactDOM.createRoot(app);
+          root.render(<HomePage />);  
+    </script>
+  </body>
+</html>

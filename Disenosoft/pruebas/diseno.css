@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+}
+
+.baner{
+    background-color: rgba(131, 114, 114, 0.132);
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    position: relative;
+    display: fixed;
+}
+
+h1{
+    color: antiquewhite;
+    text-align: left;
+    font-weight: 500;
+    font-family: "Bodoni Moda SC";
+    font-style: normal;
+    margin-left: 5px;
+    font-size: 30px;
+    position: relative;
+}
+
+ul{
+    color: antiquewhite;
+    text-align: center;
+    margin: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 40px;
+}
+li{
+    color: antiquewhite;
+}
